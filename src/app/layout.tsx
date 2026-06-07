@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: "COREX Technologies",
     template: "%s | COREX Technologies",
@@ -17,17 +16,35 @@ export const metadata = {
     "AI Automation",
     "AttendX",
     "CoreX Technologies",
+    "SaaS",
   ],
 
   metadataBase: new URL("https://corextech.info"),
 
   openGraph: {
     title: "COREX Technologies",
-    description:
-      "Where Businesses Work Smarter",
+    description: "Where Businesses Work Smarter",
     url: "https://corextech.info",
     siteName: "COREX Technologies",
     locale: "en_US",
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "COREX Technologies",
+    description: "Where Businesses Work Smarter",
+  },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+}
